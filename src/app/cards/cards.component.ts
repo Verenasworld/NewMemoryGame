@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
+  visible= true;
 
-  cards = Array.from(document.getElementsByClassName('card'));
 
 
   constructor() { 
@@ -16,11 +16,14 @@ export class CardsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+  
+  }
+ 
+  myfunction(){
+  this.visible = false
+  console.log('this is working')  
   }
 
-removeVisible(){
-  console.log('clickiii');
 }
 
-}
+
