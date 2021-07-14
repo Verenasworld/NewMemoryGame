@@ -2,12 +2,12 @@
     color: white;
     
     text-align: center;
-    font-size: 6em;
+    font-size: 4em;
 }
 
 .game-info{
     color: white;
-    font-size: 4em;
+    font-size: 2em;
 
 }
 .game-info-container{
@@ -123,16 +123,27 @@
     font-size:  .3em;
 }
 
+ .audiobutton {
+    text-align: center;
+    font-size: 20px;
+   
+   
+
+}
+
 button{
     font-size: .3em;
-        background: rgba(243, 52, 186, 0.7);
-        border: none;
-        padding: 20px;
-        color: white;
-       box-shadow: 0 5px 15px 5px rgba(245, 0, 204, 0.3);
-       cursor: pointer;
+    background: rgba(243, 52, 186, 0.7);
+    border: none;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 5px 15px 5px rgba(245, 0, 204, 0.3);
+    cursor: pointer;
+     margin: 5px;
+   
 }
 button:hover{
     transition: ease-in 500ms;
     transform: scale(1.1);
 }
+
