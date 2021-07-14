@@ -9,7 +9,8 @@ export class CardsComponent implements OnInit {
 
   visible= true;
   card = Array.from(document.getElementsByClassName('card'));
-    
+   matchsound = Audio;
+   flipsound = Audio;
 
 
   constructor() { 
@@ -33,6 +34,15 @@ ready(){
     })
   })
 }
+
+flip(){
+ 
+}
+
+match(){
+
+}
+
 }
 
 
