@@ -9,11 +9,14 @@ export class CardsComponent implements OnInit {
 
   visible= true;
   card = Array.from(document.getElementsByClassName('card'));
+  flipSound  
+  matched
     
 
 
   constructor() { 
-    
+    this.flipSound = new Audio('assets/audio/mixkit-fast-smallsweep-transition-166.wav');
+    this.matched = new Audio('assets/audio/mixkit-retro-game-notification-212.wav');
   }
 
   ngOnInit(): void {
