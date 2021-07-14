@@ -130,4 +130,9 @@ button{
         padding: 20px;
         color: white;
        box-shadow: 0 5px 15px 5px rgba(245, 0, 204, 0.3);
+       cursor: pointer;
+}
+button:hover{
+    transition: ease-in 500ms;
+    transform: scale(1.1);
 }
