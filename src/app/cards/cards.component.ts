@@ -7,9 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  constructor() { }
+  visible= true;
+  card = Array.from(document.getElementsByClassName('card'));
+    
 
-  ngOnInit(): void {
+
+  constructor() { 
+    
   }
 
+  ngOnInit(): void {
+  
+  }
+ 
+  clickstart(){
+  this.visible = false
+  console.log('this is working')  
+  }
+
+
+ready(){
+  this.card.forEach(card => {
+    card.addEventListener('click', ()=>{
+      console.log('click');
+    })
+  })
 }
+}
+
+
