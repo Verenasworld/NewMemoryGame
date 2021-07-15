@@ -18,8 +18,8 @@ export class CardsComponent implements OnInit {
 
 //Audio
   flipsound =  new Audio ('./assets/audio/flip.wav');
-  matchsound = new Audio ('src/assets/audio/mixkit-retro-game-notification-212.wav');
-  winsound = new Audio ('src/assets/audio/mixkit-auditorium-moderate-applause-and-cheering-502-wav')
+  matchsound = new Audio ('./assets/audio/match.wav');
+  winsound = new Audio ('./assets/audio/win.wav')
 
   
 
@@ -60,7 +60,7 @@ win(){
 
   cards.forEach(card => {
     card.addEventListener('click', ()=>{
-      console.log('card is working')
+
       this.flip();
     })
     
