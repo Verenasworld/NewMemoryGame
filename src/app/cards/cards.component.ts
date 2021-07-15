@@ -13,17 +13,19 @@ export class CardsComponent implements OnInit {
   visible= true;
   timecounter = 100;
  
-  
-  //card = Array.from(document.getElementsByClassName('card'));
 
 //Audio
   flipsound =  new Audio ('./assets/audio/flip.wav');
   matchsound = new Audio ('./assets/audio/match.wav');
   winsound = new Audio ('./assets/audio/win.wav')
 
-  
+  //cards 
+
+  cardtocheck = null;
+  ticker = 0;
 
  constructor () { 
+ 
    }
 
   ngOnInit(): void {
@@ -62,6 +64,7 @@ win(){
     card.addEventListener('click', ()=>{
 
       this.flip();
+      this.ticker = this.ticker +1; 
     })
     
   });
@@ -70,7 +73,7 @@ win(){
 
 
 }
-
+ 
 
 
 
@@ -101,6 +104,7 @@ win(){
 
 //match(){
 // match sound 
+// match cards 3d effekt ( make it in yoga cards)
 //}
 
  //gameOver(){
