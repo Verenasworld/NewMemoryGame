@@ -37,11 +37,12 @@ export class CardsComponent implements OnInit {
 clickstart(){
   this.clickcard()
   this.visible =  false;
-  let intervalId = setInterval(() => {
+  setInterval(() => {
     this.timecounter = this.timecounter - 1;
     if(this.timecounter === 0){
-      this.gameover();
-      this.timecounter = 100;
+      this.gameover(); 
+
+      // restart not working , how i can count one more time after game over -- repeat .. 
     }
 }, 1000);
 }
@@ -60,6 +61,7 @@ match(){
 gameover(){
   this.gameoversound.play();
   this.visible = true;
+
 }
 
 win(){
