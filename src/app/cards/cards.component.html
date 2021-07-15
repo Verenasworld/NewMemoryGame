@@ -9,7 +9,8 @@
     <div class="game-container">
       <div class="game-info-container">
         <div class="game-info">
-          Time: <span id="time-remaining">100</span>
+
+          Time: <span>{{timecounter}}</span>
         </div>
         <div class="game-info">
           Flips: <span id="flips">0</span>
@@ -155,8 +156,18 @@
 
     <div class="audiobutton">
    
-      <audio controls autoplay>
+      <audio controls autoplay loop>
         <source src="/assets/audio/bensound-thelounge.mp3" type="audio/mpeg" data-info="Music: https://www.bensound.com">
       </audio>
+
     </div>
+    <script type="text/javascript">
+      function countDown() 
+      {
+      var time = document.getElementById('time-counter').innerHTML;
+      time = time - 1;
+      } 
+      window.setInterval("countDown()", 1000);
+      </script>
+    
   </body>
