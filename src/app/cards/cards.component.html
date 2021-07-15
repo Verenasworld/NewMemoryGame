@@ -1,22 +1,34 @@
 <body>
   
     <h1 class="page-title">Sport Girl Memory</h1>
+    <div 
+    class="overlay-text" 
+    [class.visible]= "visible">
+      <button 
+       class="gamestart" 
+       (click)="clickstart()">Start the Game! 
+      </button>
+    </div>
     
- 
-    <div class="overlay-text visible" [class.visible]= "visible"><button class="gamestart" (click)="clickstart()">Start the Game! </button></div>
-    <div id="game-over-txt" class="overlay-text ">Game Over!<span class="overlay-text-small">Click to restart</span></div>
+    <div
+     id="game-over-txt" 
+     class="overlay-text"
+     [class.visible]= "visible">
+      <button class="gameover" 
+      (click)="clickstart()">Start the Game! 
+      </button>
+    </div>
   
     <div class="game-container">
       <div class="game-info-container">
         <div class="game-info">
-
-          Time: <span>{{timecounter}}</span>
+         Time: <span>{{timecounter}}</span>
         </div>
         <div class="game-info">
           Flips: <span id="flips">0</span>
         </div> 
       </div>
-  
+     
       
       <div class="card">
         <div class="card-back card-face">
@@ -161,13 +173,6 @@
       </audio>
 
     </div>
-    <script type="text/javascript">
-      function countDown() 
-      {
-      var time = document.getElementById('time-counter').innerHTML;
-      time = time - 1;
-      } 
-      window.setInterval("countDown()", 1000);
-      </script>
+   
     
   </body>
