@@ -1,5 +1,10 @@
 
-import { Component, OnInit } from '@angular/core';
+import { IcuPlaceholder } from '@angular/compiler/src/i18n/i18n_ast';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from 'stream';
+
+
+
 
 
 @Component({
@@ -7,11 +12,29 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
+
+
+
 export class CardsComponent implements OnInit {
+
+img = ["../assets/media/handstandgirl.jpg", 
+      "../assets/media/hangingsportgirl.jpg",
+      "../assets/media/hangingsportgirlkm.jpg",
+      "../assets/media/Sportgirlicons.png",
+      "../assets/media/sportgirlxy.jpg",
+      "../assets/media/yogimove123.jpg",
+      "../assets/media/yogigirlkm.jpg",
+      "../assets/media/yogigirlxy.jpg"]
+
+
+
+
+
 
 //start game
   visible= true;
   timecounter = 100;
+  ticker = 0;
  
 
 //Audio
@@ -21,13 +44,11 @@ export class CardsComponent implements OnInit {
   gameoversound = new Audio('./assets/audio/sfx-defeat1.mp3');
 
   //cards 
-
-  cardtocheck = null;
-  ticker = 0;
-  matchedcards = [];
+  cardsArray = []
+ 
 
  constructor () { 
- 
+  
    }
 
   ngOnInit(): void {
@@ -62,6 +83,7 @@ gameover(){
   this.gameoversound.play();
   this.visible = true;
 
+
 }
 
 win(){
@@ -70,20 +92,22 @@ win(){
 
 
  clickcard(){
+  let id = document.getElementById('img1')
   let cards = Array.from(document.getElementsByClassName('card'));
-
-
   cards.forEach(card => {
     card.addEventListener('click', ()=>{
-
       this.flip();
-       
+      card.classList.add('visible');
+     
+      
     })
     
   });
 }
 
-
+shuffleCards(){
+ 
+}
 
 }
  

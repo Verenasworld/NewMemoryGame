@@ -66,15 +66,15 @@
 }
 
 
-.card:hover .card-back{
+.card.visible .card-back{
     transform: rotateY(-180deg);
     }
 
-.card:hover .card-front{
+.card.visible .card-front{
         transform: rotateY(0);
     }
 
- .card-front{
+ .card-front {
     transform: rotateY(180deg);
 }
 
@@ -84,6 +84,7 @@
 
 .card.matched .front-value{
  display: flex;
+ border: 1px solid red;
 }
 
 .overlay-text{
