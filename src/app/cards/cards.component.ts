@@ -1,7 +1,5 @@
 
-import { IcuPlaceholder } from '@angular/compiler/src/i18n/i18n_ast';
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'stream';
+import { Component, OnInit, } from '@angular/core';
 
 
 
@@ -17,19 +15,6 @@ import { EventEmitter } from 'stream';
 
 export class CardsComponent implements OnInit {
 
-img = ["../assets/media/handstandgirl.jpg", 
-      "../assets/media/hangingsportgirl.jpg",
-      "../assets/media/hangingsportgirlkm.jpg",
-      "../assets/media/Sportgirlicons.png",
-      "../assets/media/sportgirlxy.jpg",
-      "../assets/media/yogimove123.jpg",
-      "../assets/media/yogigirlkm.jpg",
-      "../assets/media/yogigirlxy.jpg"]
-
-
-
-
-
 
 //start game
   visible= true;
@@ -44,8 +29,9 @@ img = ["../assets/media/handstandgirl.jpg",
   gameoversound = new Audio('./assets/audio/sfx-defeat1.mp3');
 
   //cards 
-  cardsArray = []
- 
+  cardsArray = [];
+  cardToCheck = 0;
+ cards = Array.from(document.getElementsByClassName('card'));
 
  constructor () { 
   
@@ -56,22 +42,26 @@ img = ["../assets/media/handstandgirl.jpg",
 
  
 clickstart(){
-  this.clickcard()
+  this.clickcard();
   this.visible =  false;
+  this.counter();
+}
+
+
+counter(){
   setInterval(() => {
     this.timecounter = this.timecounter - 1;
     if(this.timecounter === 0){
       this.gameover(); 
-
-      // restart not working , how i can count one more time after game over -- repeat .. 
     }
 }, 1000);
 }
 
-
 flip(){
   this.flipsound.play();
   this.ticker = this.ticker +1;
+
+
 }
 
 
@@ -82,6 +72,7 @@ match(){
 gameover(){
   this.gameoversound.play();
   this.visible = true;
+  this.timecounter = 100;
 
 
 }
@@ -91,22 +82,27 @@ win(){
 }
 
 
- clickcard(){
-  let id = document.getElementById('img1')
+clickcard(){
   let cards = Array.from(document.getElementsByClassName('card'));
   cards.forEach(card => {
     card.addEventListener('click', ()=>{
       this.flip();
-      card.classList.add('visible');
-     
-      
+      this.matchCards();
+      card.classList.add('visible');   
     })
+
     
   });
+
 }
 
 shuffleCards(){
  
+}
+
+matchCards(){
+
+
 }
 
 }
