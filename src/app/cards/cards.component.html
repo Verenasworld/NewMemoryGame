@@ -1,6 +1,6 @@
 <body>
   
-    <h1 class="page-title">Sport Girl Memory</h1>
+    <h1 class="page-title">Memory</h1>
     <div 
     class="overlay-text" 
     [class.visible]= "visible">
@@ -25,17 +25,17 @@
          Time: <span>{{timecounter}}</span>
         </div>
         <div class="game-info">
-          Flips: <span id="flips">0</span>
+          Flips: <span id="flips">{{ticker}}</span>
         </div> 
       </div>
      
       
       <div class="card">
         <div class="card-back card-face">
-          <img  src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" >
+          <img  src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image"  >
         </div>
         <div class="card-front card-face">
-          <img class="card-value" src="../assets/media/handstandgirl.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value" >
+          <img id="img1" class="card-value" src="../assets/media/handstandgirl.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value" >
         </div>
   
       </div>
@@ -44,7 +44,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/handstandgirl.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img id="img1" src="../assets/media/handstandgirl.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
   
       </div>
@@ -53,7 +53,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/hangingsportgirl.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img id="img2"  src="../assets/media/hangingsportgirl.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
   
       </div>
@@ -62,7 +62,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/hangingsportgirl.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img id="img2"  src="../assets/media/hangingsportgirl.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -70,7 +70,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/hangingsportgirlkm.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img id="img3"  src="../assets/media/hangingsportgirlkm.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -78,7 +78,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/hangingsportgirlkm.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img  id="img3" src="../assets/media/hangingsportgirlkm.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -86,7 +86,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/Sportgirlicons.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img   id="img4" src="../assets/media/Sportgirlicons.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -94,7 +94,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/Sportgirlicons.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img  id="img4" src="../assets/media/Sportgirlicons.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -102,7 +102,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/sportgirlxy.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img  id="img5" src="../assets/media/sportgirlxy.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -110,7 +110,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/sportgirlxy.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img  id="img5" src="../assets/media/sportgirlxy.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -118,7 +118,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/yogimove123.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img id="img6" src="../assets/media/yogimove123.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -126,7 +126,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/yogimove123.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img id="img6" src="../assets/media/yogimove123.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -134,7 +134,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/yogigirlkm.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img id="img7" src="../assets/media/yogigirlkm.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -142,7 +142,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/yogigirlkm.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img id="img7" src="../assets/media/yogigirlkm.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -150,7 +150,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/yogigirlxy.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img  id="img8" src="../assets/media/yogigirlxy.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
       <div class="card">
@@ -158,7 +158,7 @@
           <img src="../assets/media/flowervs.png" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="flowerfont">
         </div>
         <div class="card-front card-face">
-          <img src="../assets/media/yogigirlxy.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
+          <img id="img8"  src="../assets/media/yogigirlxy.jpg" style="max-width: 200px; max-height: 200px;" alt="Copyright image" class="front-value">
         </div>
       </div>
     
