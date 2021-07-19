@@ -14,7 +14,11 @@ import { Component, OnInit, } from '@angular/core';
 
 
 export class CardsComponent implements OnInit {
-
+//Audio
+flipsound =  new Audio ('./assets/audio/flip.wav');
+matchsound = new Audio ('./assets/audio/match.wav');
+winsound = new Audio ('./assets/audio/win.wav');
+gameoversound = new Audio('./assets/audio/sfx-defeat1.mp3');
 
 //start game
   visible= true;
@@ -22,16 +26,13 @@ export class CardsComponent implements OnInit {
   ticker = 0;
  
 
-//Audio
-  flipsound =  new Audio ('./assets/audio/flip.wav');
-  matchsound = new Audio ('./assets/audio/match.wav');
-  winsound = new Audio ('./assets/audio/win.wav');
-  gameoversound = new Audio('./assets/audio/sfx-defeat1.mp3');
+
 
   //cards 
   cardsArray = [];
-  cardToCheck = 0;
- cards = Array.from(document.getElementsByClassName('card'));
+  cardToCheck = 'card.src';
+  card = document.querySelectorAll('.card')
+
 
  constructor () { 
   
@@ -42,9 +43,47 @@ export class CardsComponent implements OnInit {
 
  
 clickstart(){
+  this.shuffleCards()
   this.clickcard();
-  this.visible =  false;
+  this.visible = false;
   this.counter();
+}
+
+
+
+shuffleCards(){
+ //mach das die Bilder immer verschieden positioniert werden ?? wie geht das?? 
+let images = document.querySelectorAll('img')
+let srcs = ['../assets/media/handtandgirl.jpg','../assets/media/hangingsportgirl.jpg', '../assets/media/hangingsportgirlkm.jpg'
+,'../assets/media/Sportgirlicons.png','../assets/media/sportgirlxy.jpg','../assets/media/yogimove123.jpg','../assets/media/yogigirlkm.jpg','../assets/media/yogigirlxy.jpg']
+
+for(let i=srcs.length-1; i>0; i--){
+  let j = Math.floor(Math.random()* i)
+  let temp = srcs[i]
+  srcs[i] = srcs[j]
+  srcs[j] = temp
+}
+
+for(let i=0; i<images.length; i ++){
+  console.log(images)
+  images[i].src = srcs[i]
+}
+}
+
+
+
+clickcard(){
+  let cards = Array.from(document.getElementsByClassName('card'));
+  cards.forEach(card => {
+    card.addEventListener('click', ()=>{
+      this.flip();
+      this.matchCards();
+      card.classList.add('visible');   
+    })
+
+    
+  });
+
 }
 
 
@@ -60,8 +99,10 @@ counter(){
 flip(){
   this.flipsound.play();
   this.ticker = this.ticker +1;
+}
 
-
+matchCards(){
+  // src the same ?? 
 }
 
 
@@ -82,28 +123,6 @@ win(){
 }
 
 
-clickcard(){
-  let cards = Array.from(document.getElementsByClassName('card'));
-  cards.forEach(card => {
-    card.addEventListener('click', ()=>{
-      this.flip();
-      this.matchCards();
-      card.classList.add('visible');   
-    })
-
-    
-  });
-
-}
-
-shuffleCards(){
- 
-}
-
-matchCards(){
-
-
-}
 
 }
  

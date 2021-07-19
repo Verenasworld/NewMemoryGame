@@ -65,6 +65,14 @@
 
 }
 
+ .card .card-back .background{
+    background-image: url(src/assets/media/flowervs.png);
+    height: 200px;
+    width: 200px;
+    background-position: center;
+    background-size: contain;
+}
+
 
 .card.visible .card-back{
     transform: rotateY(-180deg);
