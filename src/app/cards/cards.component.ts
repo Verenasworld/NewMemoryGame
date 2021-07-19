@@ -43,9 +43,10 @@ gameoversound = new Audio('./assets/audio/sfx-defeat1.mp3');
 
  
 clickstart(){
+  this.visible = false;
   this.shuffleCards()
   this.clickcard();
-  this.visible = false;
+ 
   this.counter();
 }
 
@@ -54,20 +55,32 @@ clickstart(){
 shuffleCards(){
  //mach das die Bilder immer verschieden positioniert werden ?? wie geht das?? 
 let images = document.querySelectorAll('img')
-let srcs = ['../assets/media/handtandgirl.jpg','../assets/media/hangingsportgirl.jpg', '../assets/media/hangingsportgirlkm.jpg'
-,'../assets/media/Sportgirlicons.png','../assets/media/sportgirlxy.jpg','../assets/media/yogimove123.jpg','../assets/media/yogigirlkm.jpg','../assets/media/yogigirlxy.jpg']
+let srcs = [
+'../assets/media/handstandgirl.jpg',
+'../assets/media/hangingsportgirl.jpg',
+'../assets/media/hangingsportgirlkm.jpg',
+'../assets/media/Sportgirlicons.png',
+'../assets/media/sportgirlxy.jpg',
+'../assets/media/yogimove123.jpg',
+'../assets/media/yogigirlkm.jpg',
+'../assets/media/yogigirlxy.jpg']
 
-for(let i=srcs.length-1; i>0; i--){
+for(let i=srcs.length; i>0; i--){
   let j = Math.floor(Math.random()* i)
   let temp = srcs[i]
   srcs[i] = srcs[j]
   srcs[j] = temp
+  console.log(srcs +''+ 'hääääääääää')
 }
 
 for(let i=0; i<images.length; i ++){
-  console.log(images)
+  console.log(images + 'what the fuck')
   images[i].src = srcs[i]
+
+  console.log(i + '??????????')
 }
+
+
 }
 
 
@@ -77,7 +90,6 @@ clickcard(){
   cards.forEach(card => {
     card.addEventListener('click', ()=>{
       this.flip();
-      this.matchCards();
       card.classList.add('visible');   
     })
 
